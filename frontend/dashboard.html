@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%232369db%22/%3E%3Cpath d=%22M9 23a5 5 0 0 1 0-10 7 7 0 0 1 13-1 5.5 5.5 0 0 1 0 11Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.6%22/%3E%3C/svg%3E" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — CloudSense AI</title>
+<script src="js/theme.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar-root"></aside>
+  <header class="topbar" id="topbar-root"></header>
+
+  <main class="main-content" id="main-content">
+    <div class="page-header">
+      <div>
+        <p class="eyebrow">Your cloud workspace</p><h1>Overview dashboard</h1>
+        <p class="subtitle">A quick look at your cloud storage health, right now.</p>
+      </div>
+      <button class="btn btn-primary" onclick="location.href='files.html?upload=1'">
+        Upload Files
+      </button>
+    </div>
+
+    <!-- Metric cards -->
+    <section class="metric-grid" id="metricGrid"></section>
+
+    <div class="overview-charts">
+      <section class="card"><div class="section-head"><h2>Storage activity</h2><button class="link-btn" data-detail="activity">View details ↗</button></div><p class="text-muted">Files added over the last seven days</p><div id="storageActivity"></div></section>
+      <section class="card"><div class="section-head"><h2>Storage breakdown</h2><button class="link-btn" data-detail="breakdown">View details ↗</button></div><div id="storageUsedBlock"></div></section>
+    </div>
+    <div class="overview-bottom">
+      <section class="card"><div class="section-head"><h2>AI recommendations</h2><a href="recommendations.html" class="link-btn">View all ↗</a></div><div id="dashboardRecPreview"></div></section>
+      <section class="card"><div class="section-head"><h2>Storage health</h2><button class="link-btn" data-detail="health">View details ↗</button></div><div class="health-card" id="healthCard"></div></section>
+    </div>
+    <div id="awsStatus" class="connection-status">Checking AWS connection…</div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

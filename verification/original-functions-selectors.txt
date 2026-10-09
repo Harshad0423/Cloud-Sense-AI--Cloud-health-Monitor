@@ -1,0 +1,219 @@
+frontend\js\website-similarity.js:6:document.addEventListener("DOMContentLoaded", () => {
+frontend\js\website-similarity.js:12:    .getElementById("refreshWebsiteHistory")
+frontend\js\website-similarity.js:13:    .addEventListener("click", loadWebsiteHistory);
+frontend\js\website-similarity.js:16:    .getElementById("websiteHistoryList")
+frontend\js\website-similarity.js:17:    .addEventListener("click", handleWebsiteHistoryAction);
+frontend\js\website-similarity.js:19:  document.getElementById("websiteCompareForm").addEventListener("submit", handleWebsiteComparison);
+frontend\js\website-similarity.js:20:  document.getElementById("swapWebsitesBtn").addEventListener("click", () => {
+frontend\js\website-similarity.js:21:    const inputA = document.getElementById("websiteUrlA");
+frontend\js\website-similarity.js:22:    const inputB = document.getElementById("websiteUrlB");
+frontend\js\website-similarity.js:27:async function handleWebsiteComparison(event) {
+frontend\js\website-similarity.js:30:  const urlA = document.getElementById("websiteUrlA").value.trim();
+frontend\js\website-similarity.js:31:  const urlB = document.getElementById("websiteUrlB").value.trim();
+frontend\js\website-similarity.js:32:  const button = document.getElementById("compareWebsitesBtn");
+frontend\js\website-similarity.js:33:  const loading = document.getElementById("websiteLoading");
+frontend\js\website-similarity.js:34:  const results = document.getElementById("websiteResults");
+frontend\js\website-similarity.js:62:function renderWebsiteAnalysis(analysis) {
+frontend\js\website-similarity.js:64:  const verdictCard = document.querySelector(".verdict-card");
+frontend\js\website-similarity.js:67:  document.getElementById("verdictLabel").textContent = verdict.label || "Analysis result";
+frontend\js\website-similarity.js:68:  document.getElementById("verdictTitle").textContent = verdict.title || "Comparison complete";
+frontend\js\website-similarity.js:69:  document.getElementById("verdictExplanation").textContent = verdict.explanation || "";
+frontend\js\website-similarity.js:70:  document.getElementById("duplicateScore").textContent = `${Math.round(analysis.scores.duplication || 0)}%`;
+frontend\js\website-similarity.js:79:  document.getElementById("similarityScoreGrid").innerHTML = scoreDefinitions.map(([key, label, note]) => {
+frontend\js\website-similarity.js:94:  document.getElementById("websiteEvidence").innerHTML = evidence.length
+frontend\js\website-similarity.js:99:  const warningBox = document.getElementById("websiteWarnings");
+frontend\js\website-similarity.js:106:function renderWebsiteSummary(elementId, heading, website) {
+frontend\js\website-similarity.js:112:  document.getElementById(elementId).innerHTML = `
+frontend\js\website-similarity.js:123:function escapeWebsiteHTML(value) {
+frontend\js\website-similarity.js:132:function escapeWebsiteAttribute(value) {
+frontend\js\website-similarity.js:136:async function loadWebsiteHistory() {
+frontend\js\website-similarity.js:137:  const loading = document.getElementById("websiteHistoryLoading");
+frontend\js\website-similarity.js:138:  const empty = document.getElementById("websiteHistoryEmpty");
+frontend\js\website-similarity.js:139:  const list = document.getElementById("websiteHistoryList");
+frontend\js\website-similarity.js:140:  const refreshButton = document.getElementById("refreshWebsiteHistory");
+frontend\js\website-similarity.js:163:function renderWebsiteHistory(scans) {
+frontend\js\website-similarity.js:164:  const loading = document.getElementById("websiteHistoryLoading");
+frontend\js\website-similarity.js:165:  const empty = document.getElementById("websiteHistoryEmpty");
+frontend\js\website-similarity.js:166:  const list = document.getElementById("websiteHistoryList");
+frontend\js\website-similarity.js:257:async function handleWebsiteHistoryAction(event) {
+frontend\js\website-similarity.js:262:      document.getElementById("websiteUrlA").value =
+frontend\js\website-similarity.js:265:      document.getElementById("websiteUrlB").value =
+frontend\js\website-similarity.js:269:        .getElementById("websiteCompareForm")
+frontend\js\website-similarity.js:275:      document.getElementById("websiteUrlA").focus();
+frontend\js\analytics.js:7:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\analytics.js:31:  document.getElementById("howCalculatedBtn").addEventListener("click", () => openScoringModal(health));
+frontend\js\analytics.js:34:function renderHealthDeepDive(health) {
+frontend\js\analytics.js:35:  const el = document.getElementById("healthDeepDive");
+frontend\js\analytics.js:67:function openScoringModal(health) {
+frontend\js\analytics.js:87:  document.getElementById("closeScoringBtn").addEventListener("click", () => {
+frontend\js\analytics.js:88:    document.getElementById("modal-root").classList.remove("visible");
+frontend\js\analytics.js:89:    document.getElementById("modal-root").innerHTML = "";
+frontend\js\analytics.js:93:function renderStorageBars(storage) {
+frontend\js\analytics.js:94:  const el = document.getElementById("storageBreakdown");
+frontend\js\analytics.js:107:function renderFileHealth(summary) {
+frontend\js\analytics.js:108:  const el = document.getElementById("healthTrendChart");
+frontend\js\files.js:12:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\files.js:24:  if (q) document.getElementById("fileSearchInput").value = q;
+frontend\js\files.js:34:function wireToolbar() {
+frontend\js\files.js:35:  document.getElementById("fileSearchInput").addEventListener("input", debounce(applyFiltersAndRender, 150));
+frontend\js\files.js:36:  document.getElementById("typeFilter").addEventListener("change", applyFiltersAndRender);
+frontend\js\files.js:37:  document.getElementById("statusFilter").addEventListener("change", applyFiltersAndRender);
+frontend\js\files.js:38:  document.getElementById("sortSelect").addEventListener("change", applyFiltersAndRender);
+frontend\js\files.js:40:  document.getElementById("openUploadBtn").addEventListener("click", () => {
+frontend\js\files.js:41:    document.getElementById("uploadSection").style.display = "block";
+frontend\js\files.js:42:    document.getElementById("uploadSection").scrollIntoView({ behavior: "smooth", block: "nearest" });
+frontend\js\files.js:44:  document.getElementById("closeUploadBtn").addEventListener("click", () => {
+frontend\js\files.js:45:    document.getElementById("uploadSection").style.display = "none";
+frontend\js\files.js:49:  document.querySelectorAll("table.data-table th").forEach((th, idx) => {
+frontend\js\files.js:50:    th.addEventListener("click", () => {
+frontend\js\files.js:51:      if (idx === 1) document.getElementById("sortSelect").value =
+frontend\js\files.js:52:        document.getElementById("sortSelect").value === "size-desc" ? "size-asc" : "size-desc";
+frontend\js\files.js:53:      if (idx === 0) document.getElementById("sortSelect").value = "name-asc";
+frontend\js\files.js:59:function applyFiltersAndRender() {
+frontend\js\files.js:60:  const query = document.getElementById("fileSearchInput").value.trim().toLowerCase();
+frontend\js\files.js:61:  const typeFilter = document.getElementById("typeFilter").value;
+frontend\js\files.js:62:  const statusFilter = document.getElementById("statusFilter").value;
+frontend\js\files.js:63:  const sort = document.getElementById("sortSelect").value;
+frontend\js\files.js:86:function renderTable() {
+frontend\js\files.js:87:  const tbody = document.getElementById("filesTableBody");
+frontend\js\files.js:88:  const emptyState = document.getElementById("filesEmptyState");
+frontend\js\files.js:111:function fileRowHTML(file) {
+frontend\js\files.js:136:function renderPagination(totalPages) {
+frontend\js\files.js:137:  const el = document.getElementById("pagination");
+frontend\js\files.js:154:  el.querySelectorAll("button[data-page]").forEach((btn) => {
+frontend\js\files.js:155:    btn.addEventListener("click", () => {
+frontend\js\files.js:168:function wireRowActions() {
+frontend\js\files.js:169:  document.querySelectorAll('button[data-action="delete"]').forEach((btn) => {
+frontend\js\files.js:170:    btn.addEventListener("click", () => handleDelete(btn.dataset.fileId));
+frontend\js\files.js:172:  document.querySelectorAll('button[data-action="view-duplicate"]').forEach((btn) => {
+frontend\js\files.js:173:    btn.addEventListener("click", () => handleViewDuplicate(btn.dataset.fileId));
+frontend\js\files.js:177:async function handleDelete(fileId) {
+frontend\js\files.js:199:function handleViewDuplicate(fileId) {
+frontend\js\files.js:227:  document.getElementById("keepFileBtn").addEventListener("click", () => {
+frontend\js\files.js:231:  document.getElementById("deleteDupBtn").addEventListener("click", async () => {
+frontend\js\files.js:247:function wireUploadZone() {
+frontend\js\files.js:248:  const dropZone = document.getElementById("dropZone");
+frontend\js\files.js:249:  const fileInput = document.getElementById("fileInput");
+frontend\js\files.js:250:  const chooseBtn = document.getElementById("chooseFilesBtn");
+frontend\js\files.js:252:  chooseBtn.addEventListener("click", () => fileInput.click());
+frontend\js\files.js:253:  fileInput.addEventListener("change", (e) => handleFilesSelected(e.target.files));
+frontend\js\files.js:256:    dropZone.addEventListener(evt, (e) => {
+frontend\js\files.js:262:    dropZone.addEventListener(evt, (e) => {
+frontend\js\files.js:267:  dropZone.addEventListener("drop", (e) => handleFilesSelected(e.dataTransfer.files));
+frontend\js\files.js:270:function handleFilesSelected(fileList) {
+frontend\js\files.js:274:  const list = document.getElementById("uploadProgressList");
+frontend\js\files.js:299:async function uploadToS3(row, file) {
+frontend\js\files.js:300:  const fill = row.querySelector(".progress-fill");
+frontend\js\files.js:301:  const status = row.querySelector(".upload-progress-status");
+frontend\js\dashboard.js:6:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\dashboard.js:30:function renderMetricGrid(summary) {
+frontend\js\dashboard.js:31:  const grid = document.getElementById("metricGrid");
+frontend\js\dashboard.js:88:function renderHealthCard(health) {
+frontend\js\dashboard.js:89:  const card = document.getElementById("healthCard");
+frontend\js\dashboard.js:109:function storageBytesToGB(bytes) {
+frontend\js\dashboard.js:113:function renderStorageUsed(storage) {
+frontend\js\dashboard.js:114:  const block = document.getElementById("storageUsedBlock");
+frontend\js\dashboard.js:142:function renderRecPreview(recs) {
+frontend\js\dashboard.js:143:  const grid = document.getElementById("dashboardRecPreview");
+frontend\js\reports.js:2:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\reports.js:4:  document.getElementById("generateReportBtn").addEventListener("click", handleGenerateReport);
+frontend\js\reports.js:7:    document.getElementById("reportDoc").textContent = "Unable to load report. Click Generate Report to retry.";
+frontend\js\reports.js:12:function reportEscape(value) {
+frontend\js\reports.js:18:async function loadReport() {
+frontend\js\reports.js:25:function reportMetrics(report) {
+frontend\js\reports.js:39:function renderReport(report) {
+frontend\js\reports.js:41:  document.getElementById("reportDoc").innerHTML = `
+frontend\js\reports.js:62:async function handleGenerateReport() {
+frontend\js\reports.js:63:  const button = document.getElementById("generateReportBtn");
+frontend\js\reports.js:79:function downloadReportAsText(report) {
+frontend\js\settings.js:6:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\settings.js:9:  document.getElementById("saveSettingsBtn").addEventListener("click", handleSave);
+frontend\js\settings.js:22:function updateShellUser(name) {
+frontend\js\settings.js:24:  const nameElement = document.querySelector(".user-name");
+frontend\js\settings.js:25:  const avatarElement = document.querySelector(".avatar");
+frontend\js\settings.js:38:function populateForm(settings) {
+frontend\js\settings.js:39:  document.getElementById("accountName").value = settings.account.name;
+frontend\js\settings.js:40:  document.getElementById("accountEmail").value = settings.account.email;
+frontend\js\settings.js:42:  document.querySelectorAll(".radio-option").forEach((el) => {
+frontend\js\settings.js:46:  document.getElementById("notifEmailReports").checked = settings.notifications.emailReports;
+frontend\js\settings.js:47:  document.getElementById("notifDuplicateAlerts").checked = settings.notifications.duplicateAlerts;
+frontend\js\settings.js:48:  document.getElementById("notifStorageWarnings").checked = settings.notifications.storageWarnings;
+frontend\js\settings.js:51:function wireFrequencyGroup() {
+frontend\js\settings.js:52:  document.querySelectorAll(".radio-option").forEach((el) => {
+frontend\js\settings.js:53:    el.addEventListener("click", () => {
+frontend\js\settings.js:54:      document.querySelectorAll(".radio-option").forEach((o) => o.classList.remove("selected"));
+frontend\js\settings.js:60:async function handleSave() {
+frontend\js\settings.js:61:  const selectedFrequency = document.querySelector(".radio-option.selected")?.dataset.value || "weekly";
+frontend\js\settings.js:65:      name: document.getElementById("accountName").value.trim(),
+frontend\js\settings.js:66:      email: document.getElementById("accountEmail").value.trim(),
+frontend\js\settings.js:70:      emailReports: document.getElementById("notifEmailReports").checked,
+frontend\js\settings.js:71:      duplicateAlerts: document.getElementById("notifDuplicateAlerts").checked,
+frontend\js\settings.js:72:      storageWarnings: document.getElementById("notifStorageWarnings").checked,
+frontend\js\settings.js:76:  const btn = document.getElementById("saveSettingsBtn");
+frontend\js\mockData.js:185:function getDashboardSummary() {
+frontend\js\app.js:45:function renderShell(activePage) {
+frontend\js\app.js:46:  const sidebarRoot = document.getElementById("sidebar-root");
+frontend\js\app.js:47:  const topbarRoot = document.getElementById("topbar-root");
+frontend\js\app.js:56:function buildSidebar(activePage) {
+frontend\js\app.js:78:function buildTopbar() {
+frontend\js\app.js:117:function wireMobileNav() {
+frontend\js\app.js:118:  const toggle = document.getElementById("mobileNavToggle");
+frontend\js\app.js:119:  const sidebar = document.querySelector(".sidebar");
+frontend\js\app.js:122:  toggle.addEventListener("click", () => {
+frontend\js\app.js:127:  document.addEventListener("click", (e) => {
+frontend\js\app.js:140:function wireNotifications() {
+frontend\js\app.js:141:  const btn = document.getElementById("notifBtn");
+frontend\js\app.js:142:  const dropdown = document.getElementById("notifDropdown");
+frontend\js\app.js:145:  btn.addEventListener("click", (e) => {
+frontend\js\app.js:149:  document.addEventListener("click", () => dropdown.classList.add("hidden"));
+frontend\js\app.js:152:function wireGlobalSearch() {
+frontend\js\app.js:153:  const input = document.getElementById("globalSearchInput");
+frontend\js\app.js:155:  input.addEventListener("keydown", (e) => {
+frontend\js\app.js:166:function ensureToastContainer() {
+frontend\js\app.js:167:  let el = document.getElementById("toast-container");
+frontend\js\app.js:176:function toast(message, type = "success", duration = 3200) {
+frontend\js\app.js:193:function ensureModalRoot() {
+frontend\js\app.js:194:  let el = document.getElementById("modal-root");
+frontend\js\app.js:203:function openModal(innerHTML, { onClose } = {}) {
+frontend\js\app.js:215:  const overlay = root.querySelector(".modal-overlay");
+frontend\js\app.js:216:  const closeBtn = root.querySelector(".modal-close");
+frontend\js\app.js:224:  closeBtn.addEventListener("click", close);
+frontend\js\app.js:225:  overlay.addEventListener("click", (e) => {
+frontend\js\app.js:228:  document.addEventListener("keydown", function escHandler(e) {
+frontend\js\app.js:238:function confirmDialog({ title, message, confirmLabel = "Confirm", danger = false }) {
+frontend\js\app.js:264:    document.getElementById("modalCancelBtn").addEventListener("click", () => {
+frontend\js\app.js:267:    document.getElementById("modalConfirmBtn").addEventListener("click", () => {
+frontend\js\app.js:276:function formatSize(sizeMB) {
+frontend\js\app.js:282:function debounce(fn, wait = 200) {
+frontend\js\app.js:290:function simulateDelay(data, ms = 350) {
+frontend\js\app.js:294:function statusClass(status) {
+frontend\js\app.js:306:function recCardHTML(rec) {
+frontend\js\app.js:326:function emptyRecommendationsHTML() {
+frontend\js\app.js:349:  async getFiles() {
+frontend\js\app.js:387:  async uploadFile(file, onProgress = () => {}) {
+frontend\js\app.js:414:      request.upload.addEventListener("progress", (event) => {
+frontend\js\app.js:420:      request.addEventListener("load", () => {
+frontend\js\app.js:428:      request.addEventListener("error", () => reject(new Error("Network error while uploading to S3")));
+frontend\js\app.js:429:      request.addEventListener("abort", () => reject(new Error("Upload cancelled")));
+frontend\js\app.js:441:  async deleteFile(fileId) {
+frontend\js\app.js:462:  async getHealthScore() {
+frontend\js\app.js:467:  async getRecommendations() {
+frontend\js\app.js:501:  async getStorageStats() {
+frontend\js\app.js:506:  async getDashboardStats() {
+frontend\js\app.js:524:  async getNotifications() {
+frontend\js\app.js:529:  async getSettings() {
+frontend\js\app.js:559:  async saveSettings(settings) {
+frontend\js\app.js:590:  async getWebsiteScans() {
+frontend\js\app.js:619:async deleteWebsiteScan(scanId) {
+frontend\js\app.js:648:  async compareWebsites(urlA, urlB) {
+frontend\js\app.js:676:  async generateReport() {
+frontend\js\recommendations.js:8:document.addEventListener("DOMContentLoaded", async () => {
+frontend\js\recommendations.js:17:  document.getElementById("priorityFilter").addEventListener("change", renderRecommendations);
+frontend\js\recommendations.js:21:function renderRecommendations() {
+frontend\js\recommendations.js:22:  const filter = document.getElementById("priorityFilter").value;
+frontend\js\recommendations.js:23:  const grid = document.getElementById("recGrid");
+frontend\js\recommendations.js:24:  const emptyState = document.getElementById("recEmptyState");
+frontend\js\recommendations.js:39:function wireActionButtons() {
+frontend\js\recommendations.js:40:  document.querySelectorAll(".rec-action-btn").forEach((btn) => {
+frontend\js\recommendations.js:41:    btn.addEventListener("click", () => handleTakeAction(btn.dataset.recId, btn.dataset.action));
+frontend\js\recommendations.js:45:async function handleTakeAction(recId, actionType) {

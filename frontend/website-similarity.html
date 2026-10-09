@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%232369db%22/%3E%3Cpath d=%22M9 23a5 5 0 0 1 0-10 7 7 0 0 1 13-1 5.5 5.5 0 0 1 0 11Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.6%22/%3E%3C/svg%3E" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Website Similarity — CloudSense AI</title>
+<script src="js/theme.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar-root"></aside>
+  <header class="topbar" id="topbar-root"></header>
+
+  <main class="main-content" id="main-content">
+    <div class="page-header">
+      <div>
+        <h1>Website Similarity Auditor</h1>
+        <p class="subtitle">Separate a shared business idea from copied content, code, or design.</p>
+      </div>
+      <span class="analysis-chip">Four-signal analysis</span>
+    </div>
+
+    <section class="card website-form-card">
+      <div class="section-head">
+        <div>
+          <h2>Compare two public websites</h2>
+          <p class="subtitle">Enter complete HTTP or HTTPS URLs. Analysis can take a few seconds.</p>
+        </div>
+      </div>
+
+      <form id="websiteCompareForm" class="website-form">
+        <div class="website-url-grid">
+          <label class="url-field">
+            <span>Website A</span>
+            <input id="websiteUrlA" type="url" inputmode="url" placeholder="https://website-a.com" required />
+          </label>
+
+          <button class="swap-websites-btn" id="swapWebsitesBtn" type="button" aria-label="Swap websites">⇄</button>
+
+          <label class="url-field">
+            <span>Website B</span>
+            <input id="websiteUrlB" type="url" inputmode="url" placeholder="https://website-b.com" required />
+          </label>
+        </div>
+
+        <div class="website-form-actions">
+          <button class="btn btn-primary" id="compareWebsitesBtn" type="submit">Analyze similarity</button>
+          <p class="website-safety-note">Compare only public websites you are permitted to analyze.</p>
+        </div>
+      </form>
+    </section>
+
+    <section id="websiteLoading" class="card website-loading hidden" aria-live="polite">
+      <span class="loading-spinner"></span>
+      <div>
+        <h2>Analyzing both websites…</h2>
+        <p>Reading public HTML and comparing meaning, content, structure, and design signals.</p>
+      </div>
+    </section>
+
+    <section id="websiteResults" class="website-results hidden" aria-live="polite">
+      <div class="card verdict-card">
+        <div>
+          <span class="verdict-label" id="verdictLabel">Analysis result</span>
+          <h2 id="verdictTitle">Different websites</h2>
+          <p id="verdictExplanation"></p>
+        </div>
+        <div class="duplicate-score-wrap">
+          <span class="duplicate-score" id="duplicateScore">0%</span>
+          <span>duplication score</span>
+        </div>
+      </div>
+
+      <div class="similarity-score-grid" id="similarityScoreGrid"></div>
+
+      <div class="website-summary-grid">
+        <article class="card website-summary" id="websiteSummaryA"></article>
+        <article class="card website-summary" id="websiteSummaryB"></article>
+      </div>
+
+      <section class="card evidence-card">
+        <div class="section-head">
+          <div>
+            <h2>Why CloudSense reached this result</h2>
+            <p class="subtitle">Signals are indicators for review, not a legal plagiarism judgment.</p>
+          </div>
+        </div>
+        <ul class="evidence-list" id="websiteEvidence"></ul>
+        <div class="analysis-warning hidden" id="websiteWarnings"></div>
+      </section>
+    </section>
+        <section class="card website-history-card">
+      <div class="section-head">
+        <div>
+          <h2>Recent Comparisons</h2>
+          <p class="subtitle">
+            Your latest website similarity scans saved in CloudSense.
+          </p>
+        </div>
+
+        <button
+          class="btn btn-ghost"
+          id="refreshWebsiteHistory"
+          type="button"
+        >
+          Refresh
+        </button>
+      </div>
+
+      <div id="websiteHistoryLoading" class="website-history-message">
+        Loading recent comparisons…
+      </div>
+
+      <div
+        id="websiteHistoryEmpty"
+        class="website-history-message hidden"
+      >
+        No website comparisons have been saved yet.
+      </div>
+
+      <div
+        id="websiteHistoryList"
+        class="website-history-list"
+      ></div>
+    </section>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/website-similarity.js"></script>
+</body>
+</html>

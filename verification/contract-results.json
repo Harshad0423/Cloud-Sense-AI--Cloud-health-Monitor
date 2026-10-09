@@ -1,0 +1,66 @@
+[
+  {
+    "test": "getFiles: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "uploadFile: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "deleteFile: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getHealthScore: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getRecommendations: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getStorageStats: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getDashboardStats: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getSettings: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "saveSettings: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "getWebsiteScans: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "deleteWebsiteScan: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "compareWebsites: original method, URL, headers, body and parsing preserved",
+    "pass": true
+  },
+  {
+    "test": "backend/website_similarity/lambda_function.py unchanged",
+    "pass": true
+  },
+  {
+    "test": "backend/website_similarity/README.md unchanged",
+    "pass": true
+  },
+  {
+    "test": "backend/website_similarity/test_event.json unchanged",
+    "pass": true
+  },
+  {
+    "test": "No conic gradients or sample data dependencies",
+    "pass": true
+  }
+]

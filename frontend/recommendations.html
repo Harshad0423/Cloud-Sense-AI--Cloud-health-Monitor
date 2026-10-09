@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%232369db%22/%3E%3Cpath d=%22M9 23a5 5 0 0 1 0-10 7 7 0 0 1 13-1 5.5 5.5 0 0 1 0 11Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.6%22/%3E%3C/svg%3E" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Recommendations — CloudSense AI</title>
+<script src="js/theme.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar-root"></aside>
+  <header class="topbar" id="topbar-root"></header>
+
+  <main class="main-content" id="main-content">
+    <div class="page-header">
+      <div>
+        <h1>Recommendations</h1>
+        <p class="subtitle">Prioritized actions to improve your Cloud Health Score.</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <select class="select-input" id="priorityFilter" aria-label="Recommendation priority">
+        <option value="all">All priorities</option>
+        <option value="high">High priority</option>
+        <option value="medium">Optimization</option>
+        <option value="low">Storage optimization</option>
+      </select>
+    </div>
+
+    <section class="rec-grid" id="recGrid"></section>
+    <div id="recEmptyState"></div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/recommendations.js"></script>
+</body>
+</html>

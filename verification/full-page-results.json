@@ -1,0 +1,169 @@
+{
+  "results": [
+    {
+      "test": "dashboard live load",
+      "state": ""
+    },
+    {
+      "test": "dashboard dark 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard dark 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard dark 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard dark 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard dark 375 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard light 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard light 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard light 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard light 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "dashboard light 375 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files live load",
+      "state": ""
+    },
+    {
+      "test": "files dark 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files dark 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files dark 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files dark 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files dark 375 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files light 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files light 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files light 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files light 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "files light 375 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity live load",
+      "state": ""
+    },
+    {
+      "test": "website-similarity dark 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity dark 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity dark 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity dark 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity dark 375 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity light 1920 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity light 1440 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity light 1024 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity light 768 no overflow",
+      "pass": true
+    },
+    {
+      "test": "website-similarity light 375 no overflow",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/dashboard-stats",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/recommendations",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/website-similarity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "url": "https://93mhrfioe1.execute-api.ap-south-1.amazonaws.com/website-similarity",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}

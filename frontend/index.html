@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%232369db%22/%3E%3Cpath d=%22M9 23a5 5 0 0 1 0-10 7 7 0 0 1 13-1 5.5 5.5 0 0 1 0 11Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.6%22/%3E%3C/svg%3E" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CloudSense AI — Intelligent Cloud Storage Health Advisor</title>
+<script src="js/theme.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  /* Landing page only needs a handful of extra rules — kept inline here
+     (not in style.css) because this page doesn't use the dashboard shell. */
+  .landing { min-height: 100vh; display: flex; flex-direction: column; }
+  .landing-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 40px; max-width: 1200px; margin: 0 auto; width: 100%;
+  }
+  .landing-brand { display: flex; align-items: center; gap: 10px; }
+  .landing-brand .brand-mark { width: 28px; height: 28px; color: var(--teal-accent); }
+  .landing-brand .brand-mark svg { width: 100%; height: 100%; }
+  .landing-brand span { font-family: var(--font-display); font-weight:500; font-size: 17px; color: var(--navy-900); }
+  .landing-brand em { color: var(--teal-accent); font-style: normal; }
+
+  .hero {
+    max-width: 1100px; margin: 0 auto; padding: 40px 40px 10px;
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; flex: 1;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight:500; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--blue-accent); background: rgba(47,111,237,0.08);
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
+  }
+  .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-accent); }
+  .hero h1 { font-size: 40px; line-height: 1.12; margin-bottom: 16px; color: var(--navy-900); }
+  .hero h1 span { color: var(--blue-accent); }
+  .hero p.lead { font-size: 15.5px; color: var(--text-600); max-width: 470px; margin-bottom: 26px; line-height: 1.65; }
+  .hero-ctas { display: flex; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
+  .hero-note { font-size: 12.3px; color: var(--text-400); }
+
+  .hero-visual {
+    background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+    border-radius: 22px; padding: 26px; color: #fff;
+    box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+  }
+  .hero-visual::before {
+    content: ""; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(23,184,166,0.35), transparent 70%);
+  }
+  .hero-visual-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; position: relative; }
+  .hero-visual-head span { font-size: 12px; color: #9fb1d6; font-weight:500; letter-spacing: 0.03em; text-transform: uppercase; }
+  .hv-ring {
+    width: 92px; height: 92px; border-radius: 50%; margin: 6px auto 16px;
+    background: none;
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .hv-ring::before { content:""; position:absolute; inset:9px; border-radius:50%; background: var(--navy-900); }
+  .hv-ring b { position: relative; font-family: var(--font-mono); font-size: 24px; }
+  .hv-row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.09); }
+  .hv-row b { font-family: var(--font-mono); color: #fff; }
+  .hv-row span { color: #9fb1d6; }
+
+  .feature-strip {
+    max-width: 1100px; margin: 30px auto 0; padding: 30px 40px 60px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .feature-strip .fcard {
+    background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 18px;
+  }
+  .fcard .ficon {
+    width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    background: rgba(47,111,237,0.1); color: var(--blue-accent); margin-bottom: 10px;
+  }
+  .fcard .ficon svg { width: 16px; height: 16px; }
+  .fcard h3 { font-size: 13.8px; margin-bottom: 4px; }
+  .fcard p { font-size: 12.3px; color: var(--text-600); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 30px 24px 0; }
+    .feature-strip { grid-template-columns: repeat(2, 1fr); padding: 24px 24px 48px; }
+    .landing-nav { padding: 18px 24px; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+<link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="landing">
+  <div class="landing-nav">
+    <div class="landing-brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 18a4.5 4.5 0 0 1-.4-8.98A5.5 5.5 0 0 1 17.2 8.1 4 4 0 0 1 17 18H7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span>CloudSense <em>AI</em></span>
+    </div>
+    <div class="landing-actions"><button id="themeToggle" class="theme-toggle">Light mode</button><a href="dashboard.html" class="btn btn-primary btn-sm">Open Dashboard</a></div>
+  </div>
+
+  <main class="hero" id="main-content">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span> Live AWS storage intelligence</div>
+      <h1>Know exactly what's<br/>slowing your <span>cloud storage</span> down.</h1>
+      <p class="lead">
+        CloudSense AI watches your files, scores the health of your storage out of 100,
+        flags duplicates and forgotten files, and tells you precisely what to delete,
+        archive, or compress — and how much you'll save by doing it.
+      </p>
+      <div class="hero-ctas">
+        <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+        <a href="website-similarity.html" class="btn btn-ghost">Compare Websites</a>
+      </div>
+      <p class="hero-note">Secure AWS uploads, live analytics, weekly reports, and website similarity analysis in one dashboard.</p>
+    </div>
+
+    <div class="hero-visual" id="landingHealth"><p>Loading your cloud health…</p></div>
+  </main>
+
+  <div class="feature-strip">
+    <div class="fcard">
+      <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z" stroke="currentColor" stroke-width="1.6"/></svg></div>
+      <h3>Cloud Health Score</h3>
+      <p>A single 0–100 score built from duplicates, inactivity, and file bloat — recalculated automatically.</p>
+    </div>
+    <div class="fcard">
+      <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 6.5h17v11h-17v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <h3>Duplicate Detection</h3>
+      <p>Finds files that are eating space twice, with a clear original-vs-duplicate comparison.</p>
+    </div>
+    <div class="fcard">
+      <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <h3>Smart Recommendations</h3>
+      <p>Prioritized recommendations to review duplicates, large files, and inactive storage.</p>
+    </div>
+    <div class="fcard">
+      <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Weekly Reports</h3>
+      <p>A generated summary of your storage health, ready to review or share every week.</p>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/landing.js"></script>
+</body>
+</html>

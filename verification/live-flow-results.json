@@ -1,0 +1,230 @@
+{
+  "results": [
+    {
+      "test": "Dashboard renders live metrics and saved scan count",
+      "pass": true
+    },
+    {
+      "test": "All detail drawers, focus containment, Escape and focus restoration",
+      "pass": true
+    },
+    {
+      "test": "Theme toggle persists on refresh and another page",
+      "pass": true
+    },
+    {
+      "test": "Pagination",
+      "pass": true
+    },
+    {
+      "test": "Duplicate filter and duplicate review",
+      "pass": true
+    },
+    {
+      "test": "Type filter",
+      "pass": true
+    },
+    {
+      "test": "Size sorting",
+      "pass": true
+    },
+    {
+      "test": "Global search and query prefilter",
+      "pass": true
+    },
+    {
+      "test": "Filtered empty state",
+      "pass": true
+    },
+    {
+      "test": "Presigned upload, S3 PUT, metadata refresh and real duplicate detection",
+      "pass": true
+    },
+    {
+      "test": "Delete cancel, confirmed deletion, live API removal (test files only)",
+      "pass": true
+    },
+    {
+      "test": "Recommendation priority filter, delete confirmation cancel and review navigation",
+      "pass": true
+    },
+    {
+      "test": "Settings PUT with unchanged values and GET persistence after refresh",
+      "pass": true
+    },
+    {
+      "test": "Live report generation and actual text download",
+      "pass": true
+    },
+    {
+      "test": "Website URL swap",
+      "pass": true
+    },
+    {
+      "test": "Live comparison request, verdict, all four scores, evidence, warnings and responsive results",
+      "pass": true
+    },
+    {
+      "test": "History and compare-again URL restoration",
+      "pass": true
+    },
+    {
+      "test": "Delete newly created website comparison",
+      "pass": true
+    },
+    {
+      "test": "Friendly API failures across pages; settings protected against failed-load overwrite",
+      "pass": true
+    },
+    {
+      "test": "Recovery after API failure",
+      "pass": true
+    },
+    {
+      "test": "No uncaught browser JavaScript errors",
+      "pass": true
+    },
+    {
+      "test": "Disposable test data cleanup",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "route": "/dashboard-stats",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/recommendations",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/upload-url",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/upload-url",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files/4a893173-ed6f-44ea-a16d-b47646f69cdd",
+      "method": "DELETE",
+      "status": 200
+    },
+    {
+      "route": "/files/9de47384-a357-4182-953c-68542025425f",
+      "method": "DELETE",
+      "status": 200
+    },
+    {
+      "route": "/recommendations",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/settings",
+      "method": "PUT",
+      "status": 200
+    },
+    {
+      "route": "/settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/recommendations",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/dashboard-stats",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/recommendations",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/dashboard-stats",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity/1dfd5604-e18a-4cab-b0a8-d26645f08c84",
+      "method": "DELETE",
+      "status": 200
+    },
+    {
+      "route": "/website-similarity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "route": "/files",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}
